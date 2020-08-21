@@ -820,7 +820,7 @@ stock kz_make_cvarexec(const config[])
 	
 	fprintf(f, "// Admin command^n");
 	fprintf(f, "^n");
-	fprintf(f, "// amx_reset_uqtops – reset all tops^n");
+	fprintf(f, "// amx_reset_uqtops ï¿½ reset all tops^n");
 	fprintf(f, "^n");
 	
 	fprintf(f, "// Cvars^n");
@@ -1271,14 +1271,6 @@ public sineva(id)
 		message_end();
 }
 
-public tskFps(id)
-{
-	if( leg_settings)
-	{
-		id-=434490;
-		client_cmd(id, "developer 0;fps_max 101;cl_forwardspeed 400;cl_sidespeed 400;cl_backspeed 400");
-	}
-}
 public server_frame()
 {
 	if( leg_settings )
@@ -7891,7 +7883,6 @@ public fwdPostThink( id )
 			|| buttonsNew&IN_FORWARD
 			|| buttonsNew&IN_BACK )
 			{	
-				//tskFps(id);
 				if(strafe_num[id] < NSTRAFES)
 				{
 					if( fSpeed > speed[id])
@@ -8795,9 +8786,6 @@ public FwdPlayerSpawn(id)
 {
 	if( is_user_alive(id) && !is_user_bot(id) && !is_user_hltv(id))
 	{
-		if( !task_exists(id+434490, 0) )
-			set_task(1.0, "tskFps", id+434490, "", 0, "b", 0);
-			
 		g_alive[id] = true;
 		strafe_num[id]=0;
 	}
