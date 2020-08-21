@@ -820,7 +820,7 @@ stock kz_make_cvarexec(const config[])
 	
 	fprintf(f, "// Admin command^n");
 	fprintf(f, "^n");
-	fprintf(f, "// amx_reset_uqtops � reset all tops^n");
+	fprintf(f, "// amx_reset_uqtops reset all tops^n");
 	fprintf(f, "^n");
 	
 	fprintf(f, "// Cvars^n");
